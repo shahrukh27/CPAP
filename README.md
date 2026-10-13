@@ -90,10 +90,10 @@ We observed that individually performance of both models dropped, however, if we
 
 ## Conclusion
 
-• **New Prediction Tool**: Developed CPAP, a new program for poly (A) sites prediction in *Chlamydomonas reinhardtii* using logistic regression for feature selection.
-• **Performance Boost**: CPAP outperformed PASS 2.0 across key metrics:
-	• Sensitivity (Sn): 6% higher on the combined positive dataset.
-	• Specificity (Sp): 5% better on coding sequences (CDS) and 21% better on intronic control sequences.
-• **Complementary Approach**: Combining correct predictions from both CPAP and PASS 2.0 yielded the best results. The distinct features used by each program led to a large number of valuable, unique predictions.
-• **Proposed Solution**: Because both tools individually showed lower specificity, a complementary pipeline was proposed to reduce the error margin and secure high-quality poly (A) sites with better Sp.
+* **New Prediction Tool**: Developed CPAP, a new program for poly (A) sites prediction in *Chlamydomonas reinhardtii* using logistic regression for feature selection.
+* **Performance Boost**: CPAP outperformed PASS 2.0 across key metrics:
+  - Sensitivity (Sn): 6% higher on the combined positive dataset.
+  - Specificity (Sp): 5% better on coding sequences (CDS) and 21% better on intronic control sequences.
+* **Complementary Approach**: Combining correct predictions from both CPAP and PASS 2.0 yielded the best results. The distinct features used by each program led to a large number of valuable, unique predictions.
+* **Proposed Solution**: Because both tools individually showed lower specificity, a complementary pipeline was proposed to reduce the error margin and secure high-quality poly (A) sites with better Sp.
 
