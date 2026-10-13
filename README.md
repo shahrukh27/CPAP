@@ -20,7 +20,7 @@ Both Positive and Negative datasets were collected separately.
 
 Positive Dataset was extracted as per the following workflow:
 
-![alt text](https://github.com/shahrukh27/CPAP/blob/main/Positive%20Dataset.png)
+![alt text](https://github.com/shahrukh27/CPAP/blob/main/assets/Positive%20Dataset.png)
 
 #### Data Sources: 
 
@@ -31,7 +31,7 @@ https://doi.org/10.1534/genetics.108.088971
 
 Negative Dataset was extracted as per the following workflow:
 
-![alt text](https://github.com/shahrukh27/CPAP/blob/main/Negative%20Dataset.png)
+![alt text](https://github.com/shahrukh27/CPAP/blob/main/assets/Negative%20Dataset.png)
 
 ## Model Development 
 
@@ -54,13 +54,13 @@ Total of 65 features were generated based on the following data points:
 4. Cleavage site composition
 5. Combinations of various K-mer patterns in NUE, FUE, CE, and DSE regions
    
-![alt_text](https://github.com/shahrukh27/CPAP/blob/main/Feature%20Generation.png)
+![alt_text](https://github.com/shahrukh27/CPAP/blob/main/assets/Feature%20Generation.png)
 
 ### Feature Selection and Model Development
 
 Feature selection resulted in 56 features to be used in model development. 
 
-![alt_text](https://github.com/shahrukh27/CPAP/blob/main/Feature%20Selection.png)
+![alt_text](https://github.com/shahrukh27/CPAP/blob/main/assets/Feature%20Selection.png)
 
 Final model was developed with the remaining 56 features.
 
@@ -78,13 +78,13 @@ The error margin was ±20 i.e., if the predicted poly (A) site is within ±20 nt
 
 PASS 2.0 was also scored on the same testing dataset. Comparison was done on model evaluations of both CPAP and PASS 2.0. 
 
-![alt_text](https://github.com/shahrukh27/CPAP/blob/main/Sensitivity%20Comparison.png)
+![alt_text](https://github.com/shahrukh27/CPAP/blob/main/assets/Sensitivity%20Comparison.png)
 
 CPAP performed 6% better than PASS 2.0 on overall testing dataset. It performed better in individual regions as well. 
 
 Lower specificity showed higher number of false positives. To counter that, we reduced the prediction error margin ad evaluated both models again as follows:
 
-![alt_text](https://github.com/shahrukh27/CPAP/blob/main/Performance%20Evaluation.png)
+![alt_text](https://github.com/shahrukh27/CPAP/blob/main/assets/Performance%20Evaluation.png)
 
 We observed that individually performance of both models dropped, however, if we can pool the predictions of both models together we can still achieve 70% sensitivty.
 
