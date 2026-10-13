@@ -6,12 +6,12 @@
 ###################################################
 #	Declaring file names
 ###################################################
-$filename="./Datasets/seq_positiveDataset.fa";
-$filename1="./Datasets/oligo_scores.txt";
-$filename2="./Datasets/meme_test_matrices.txt";
-$filename3="./Datasets/2dproperty.txt";
-$filename4="./Datasets/logit_output.txt";
-$filename5="./Datasets/CSmatrix.txt";
+$filename="../Datasets/seq_positiveDataset.fa";
+$filename1="../Datasets/oligo_scores.txt";
+$filename2="../Datasets/meme_test_matrices.txt";
+$filename3="../Datasets/2dproperty.txt";
+$filename4="../Datasets/logit_output.txt";
+$filename5="../Datasets/CSmatrix.txt";
 
 open SEQFILE,"$filename"
 	or die "Could not open $filename. Aborting!\n";
@@ -25,7 +25,7 @@ open LOGITFILE,"$filename4"
 	or die "Could not open $filename4. Aborting.\n";
 open CSFILE,"$filename5"
 	or die "Could not open $filename5. Aborting.\n";
-open  (WRITEFILE, ">test_introns_3_Negative_output_18thDec2015.txt")
+open  (WRITEFILE, ">CPAP_ouput_scores.txt")
 	or die "Could not open output file. Aborting!\n";
 ###################################################
 #	Declaring Variables
