@@ -9,7 +9,7 @@ Chlamydomonas Polyadenylation Prediction Tool (CPAP) : A machine learning tool t
 
 I developed CPAP as my Bachelor of Science thesis project in Fall 2015. This repository contains the historical Perl prediction script, supporting model files, and a summary of the thesis methods and results.
 
-## :dna: Overview of Polyadenylation
+## :dna: Polyadenylation
 
 Polyadenylation is a vital post-transcriptional modification in eukaryotes that occurs in the nucleus to protect messenger RNA (mRNA) from degradation during cytoplasmic transport.
 
