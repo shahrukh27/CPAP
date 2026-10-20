@@ -1,7 +1,13 @@
 # CPAP
+### Polyadenylation site prediction in *Chlamydomonas reinhardtii*
+
+[![Language Perl](https://img.shields.io/badge/Language-Perl-3876BB)](Scripts/CPAP.pl)
+[![Project Bachelor thesis 2015](https://img.shields.io/badge/Project-Bachelor_thesis_2015-8062AB)](#cpap)
+[![License MIT](https://img.shields.io/badge/License-MIT-137D87)](LICENSE)
+
 Chlamydomonas Polyadenylation Prediction Tool (CPAP) : A machine learning tool to accurately predict polyadenylation (polyA) sites across all genomic regions (3' UTR, 5' UTR, CDS, introns, and intergenic regions) in *Chlamydomonas reinhardtii*.
 
-This was my Bachelor of Science Thesis Project done in Fall 2015. 
+I developed CPAP as my Bachelor of Science thesis project in Fall 2015. This repository contains the historical Perl prediction script, supporting model files, and a summary of the thesis methods and results.
 
 ## Overview of Polyadenylation
 
@@ -14,24 +20,14 @@ The process follows a distinct **two-step pathway**:
 
 ## Dataset
 
-Both Positive and Negative datasets were collected separately.
+Positive examples were assembled from published poly(A) evidence. The documented workflow maps source sequences to the *C. reinhardtii* reference genome, clusters nearby sites, and extracts sequence windows. Negative controls were extracted from genomic background regions and screened against positive-site evidence.
 
-### Positive Dataset
+**Source studies listed in the original repository**
 
-Positive Dataset was extracted as per the following workflow:
+- https://doi.org/10.1534/g3.114.010249
+- https://doi.org/10.1534/genetics.108.088971
 
-![alt text](https://github.com/shahrukh27/CPAP/blob/main/assets/Positive%20Dataset.png)
-
-#### Data Sources: 
-
-https://doi.org/10.1534/g3.114.010249
-https://doi.org/10.1534/genetics.108.088971
-
-### Negative Dataset
-
-Negative Dataset was extracted as per the following workflow:
-
-![alt text](https://github.com/shahrukh27/CPAP/blob/main/assets/Negative%20Dataset.png)
+[Positive Dataset](assets/Positive%20Dataset.png) | [Negative Dataset](assets/Negative%20Dataset.png)
 
 ## Model Development 
 
@@ -46,21 +42,23 @@ Following were the 4 components of model development:
 Total of 65 features were generated based on the following data points:
 
 1. Finding novel motifs in the NUE, FUE, DSE, and CE regions around poly (A) sites in addition to the previously reported motifs
-  • Near Upstream Element (NUE) region [101:140]
-  • Far Upstream Element (FUE) region [1:100]
-  • Cleavage Element (CE) region [121:160]
-  • Downstream Element (DSE) region [141:190]
+   | Region | Full name | Relative base offsets | Length |
+   | :---: | :---: | :---: | :---: |
+   | FUE | Far upstream element | −140 to −41 | 100 nt |
+   | NUE | Near upstream element | −40 to −1 | 40 nt |
+   | CE | Cleavage element | −20 to +19 | 40 nt |
+   | DSE | Downstream element | 0 to +49 | 50 nt |
 3. Using multiple physiochemical and conformational properties of the poly (A) site regions
 4. Cleavage site composition
 5. Combinations of various K-mer patterns in NUE, FUE, CE, and DSE regions
    
-![alt_text](https://github.com/shahrukh27/CPAP/blob/main/assets/Feature%20Generation.png)
+[Feature Generation Pipeline](assets/Feature%20Generation.png)
 
 ### Feature Selection and Model Development
 
-Feature selection resulted in 56 features to be used in model development. 
+Feature selection resulted in 56 features to be used in model development and scoring. 
 
-![alt_text](https://github.com/shahrukh27/CPAP/blob/main/assets/Feature%20Selection.png)
+[Feature Selection Pipeline](assets/Feature%20Selection.png)
 
 Final model was developed with the remaining 56 features.
 
@@ -76,17 +74,15 @@ The error margin was ±20 i.e., if the predicted poly (A) site is within ±20 nt
 
 ### Performance Evaluation and Comparison with PASS 2.0 
 
-PASS 2.0 was also scored on the same testing dataset. Comparison was done on model evaluations of both CPAP and PASS 2.0. 
+CPAP was compared with PASS2.0 by scoring on the same test dataset. 
 
-![alt_text](https://github.com/shahrukh27/CPAP/blob/main/assets/Sensitivity%20Comparison.png)
+CPAP had better sensitivity then PASS 2.0 at both overall level and individual region level.
 
-CPAP performed 6% better than PASS 2.0 on overall testing dataset. It performed better in individual regions as well. 
+Lower specificity showed higher number of false positives. To counter that, prediction error margin was reduced and both models were re-evaluated.
 
-Lower specificity showed higher number of false positives. To counter that, we reduced the prediction error margin ad evaluated both models again as follows:
+[Sensitivity Comparison](assets/Sensitivity%20Comparison.png) | [Reduced Error Margin Evaluation](assets/Performance%20Evaluation.png)
 
-![alt_text](https://github.com/shahrukh27/CPAP/blob/main/assets/Performance%20Evaluation.png)
-
-We observed that individually performance of both models dropped, however, if we can pool the predictions of both models together we can still achieve 70% sensitivty.
+It was observed that individual performance of both models dropped, however, if by pooling the predictions of both models together 70% sensitivity was still recovered. 
 
 ## Conclusion
 
