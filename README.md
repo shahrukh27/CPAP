@@ -9,7 +9,7 @@ Chlamydomonas Polyadenylation Prediction Tool (CPAP) : A machine learning tool t
 
 I developed CPAP as my Bachelor of Science thesis project in Fall 2015. This repository contains the historical Perl prediction script, supporting model files, and a summary of the thesis methods and results.
 
-## Overview of Polyadenylation
+## :dna: Overview of Polyadenylation
 
 Polyadenylation is a vital post-transcriptional modification in eukaryotes that occurs in the nucleus to protect messenger RNA (mRNA) from degradation during cytoplasmic transport.
 
@@ -18,7 +18,7 @@ The process follows a distinct **two-step pathway**:
 1. **Cleavage:** The mRNA strand is cleaved at a specific site.
 2. **Tail Addition:** A poly(A) tail is appended directly to the newly formed 3'-end.
 
-## Dataset
+## :floppy_disk: Dataset
 
 Positive examples were assembled from published poly(A) evidence. The documented workflow maps source sequences to the *C. reinhardtii* reference genome, clusters nearby sites, and extracts sequence windows. Negative controls were extracted from genomic background regions and screened against positive-site evidence.
 
@@ -29,7 +29,7 @@ Positive examples were assembled from published poly(A) evidence. The documented
 
 [Positive Dataset](assets/Positive%20Dataset.png) | [Negative Dataset](assets/Negative%20Dataset.png)
 
-## Model Development 
+## :robot: Model Development 
 
 Following were the 4 components of model development:
 1. Feature Generation
@@ -84,7 +84,19 @@ Lower specificity showed higher number of false positives. To counter that, pred
 
 It was observed that individual performance of both models dropped, however, if by pooling the predictions of both models together 70% sensitivity was still recovered. 
 
-## Conclusion
+## :file_folder: Repository files
+
+| Path | Purpose |
+| :---: | :---: |
+| `Scripts/CPAP.pl` | Perl Prediction Script |
+| `Datasets/logit_output.txt` | Logistic Regression Coefficients |
+| `Datasets/meme_test_matrices.txt` | Motif-scoring Matrices |
+| `Datasets/2dproperty.txt` | Dinucleotide Property Values |
+| `Datasets/oligo_scores.txt` | K-mer Scores |
+| `Datasets/CSmatrix.txt` | Cleavage-site Composition Matrix |
+| `assets/` | Diagrams |
+
+## :checkered_flag: Conclusion
 
 * **New Prediction Tool**: Developed CPAP, a new program for poly (A) sites prediction in *Chlamydomonas reinhardtii* using logistic regression for feature selection.
 * **Performance Boost**: CPAP outperformed PASS 2.0 across key metrics:
