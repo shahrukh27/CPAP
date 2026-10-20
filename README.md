@@ -1,10 +1,12 @@
+<div align="center">
+
 # CPAP
 ### Polyadenylation site prediction in *Chlamydomonas reinhardtii*
 
 [![Language Perl](https://img.shields.io/badge/Language-Perl-3876BB)](Scripts/CPAP.pl)
 [![Project Bachelor thesis 2015](https://img.shields.io/badge/Project-Bachelor_thesis_2015-8062AB)](#cpap)
 [![License MIT](https://img.shields.io/badge/License-MIT-137D87)](LICENSE)
-
+</div>
 Chlamydomonas Polyadenylation Prediction Tool (CPAP) : A machine learning tool to accurately predict polyadenylation (polyA) sites across all genomic regions (3' UTR, 5' UTR, CDS, introns, and intergenic regions) in *Chlamydomonas reinhardtii*.
 
 I developed CPAP as my Bachelor of Science thesis project in Fall 2015. This repository contains the historical Perl prediction script, supporting model files, and a summary of the thesis methods and results.
