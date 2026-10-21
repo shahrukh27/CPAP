@@ -1,7 +1,7 @@
 <div align="center">
 
 # CPAP
-### Polyadenylation site prediction in *Chlamydomonas reinhardtii*
+### Polyadenylation site prediction in _Chlamydomonas reinhardtii_
 
 [![Language Perl](https://img.shields.io/badge/Language-Perl-3876BB)](Scripts/CPAP.pl)
 [![Project Bachelor thesis 2015](https://img.shields.io/badge/Project-Bachelor_thesis_2015-8062AB)](#cpap)
